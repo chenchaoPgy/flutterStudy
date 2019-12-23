@@ -74,7 +74,7 @@ class _PicturesPageState extends State<PicturesPage> {
   Widget _scrollView(BuildContext context) {
     return Container(
       child: CustomScrollView(
-        slivers: <Widget>[
+        slivers: <Widget>[   
           SliverPersistentHeader(
               pinned: true,
               delegate: TopHeader(
