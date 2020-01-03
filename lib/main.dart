@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'model/post.dart';
 
 void main() {
   runApp(app());
@@ -9,15 +10,88 @@ class app extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('chenchao'),
-        ),
-        bottomNavigationBar: NavigationToolbar(
-          trailing: Transform.translate(offset: Offset(12.0, 12.0)),
-        ),
-        body: Hello(),
+        home: Home2(), theme: ThemeData(primarySwatch: Colors.yellow));
+  }
+}
+
+class Home2 extends StatelessWidget {
+  Widget _itemBuilder(BuildContext context, int index) {
+    return Container(
+      margin: EdgeInsets.all(10.0),
+      color: Colors.white,
+      child: Column(
+        children: <Widget>[
+          Image.network(posts[index].imageUrl),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            posts[index].title,
+            style: Theme.of(context).textTheme.title,
+          ),
+          Text(
+            posts[index].author,
+            style: Theme.of(context).textTheme.subhead,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+        ],
       ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      backgroundColor: Colors.cyan,
+      appBar: AppBar(title: Text("HOME2")),
+      body: ListView.builder(
+        itemBuilder: _itemBuilder,
+        itemCount: posts.length,
+      ),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  Widget _itemBuilder(BuildContext context, int index) {
+    return Container(
+      margin: EdgeInsets.all(10.0),
+      color: Colors.white,
+      child: Column(
+        children: <Widget>[
+          Image.network(posts[index].imageUrl),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            posts[index].title,
+            style: Theme.of(context).textTheme.title,
+          ),
+          Text(
+            posts[index].author,
+            style: Theme.of(context).textTheme.subhead,
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      backgroundColor: Colors.red,
+      appBar: AppBar(
+        title: Text("wew"),
+      ),
+      body:
+          ListView.builder(itemBuilder: _itemBuilder, itemCount: posts.length),
     );
   }
 }
@@ -26,12 +100,15 @@ class Hello extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Center(
+    return new Center(
       child: Text(
-        'hello',
-        textDirection: TextDirection.ltr,
+        "hello",
         style: TextStyle(
-            color: Colors.red, fontSize: 30, fontWeight: FontWeight.bold),
+            color: Colors.lightGreen,
+            fontSize: 30.0,
+            backgroundColor: Colors.pink,
+            letterSpacing: 5.0),
+        textDirection: TextDirection.rtl,
       ),
     );
   }
