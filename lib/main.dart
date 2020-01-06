@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'demo/listview_demo.dart';
 import 'model/post.dart';
+import 'demo/drawer_demo.dart';
+import 'demo/bottom_navigation_bar_demo.dart';
 
 void main() {
   runApp(app());
@@ -10,106 +13,63 @@ class app extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-        home: Home2(), theme: ThemeData(primarySwatch: Colors.yellow));
-  }
-}
-
-class Home2 extends StatelessWidget {
-  Widget _itemBuilder(BuildContext context, int index) {
-    return Container(
-      margin: EdgeInsets.all(10.0),
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          Image.network(posts[index].imageUrl),
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-            posts[index].title,
-            style: Theme.of(context).textTheme.title,
-          ),
-          Text(
-            posts[index].author,
-            style: Theme.of(context).textTheme.subhead,
-          ),
-          SizedBox(
-            height: 10,
-          ),
-        ],
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      backgroundColor: Colors.cyan,
-      appBar: AppBar(title: Text("HOME2")),
-      body: ListView.builder(
-        itemBuilder: _itemBuilder,
-        itemCount: posts.length,
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        home: Home(),
+        theme: ThemeData(
+            highlightColor: Color.fromRGBO(255, 125, 125, 0.5),
+            splashColor: Colors.white70,
+            primarySwatch: Colors.yellow));
   }
 }
 
 class Home extends StatelessWidget {
-  Widget _itemBuilder(BuildContext context, int index) {
-    return Container(
-      margin: EdgeInsets.all(10.0),
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          Image.network(posts[index].imageUrl),
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-            posts[index].title,
-            style: Theme.of(context).textTheme.title,
-          ),
-          Text(
-            posts[index].author,
-            style: Theme.of(context).textTheme.subhead,
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-      backgroundColor: Colors.red,
-      appBar: AppBar(
-        title: Text("wew"),
-      ),
-      body:
-          ListView.builder(itemBuilder: _itemBuilder, itemCount: posts.length),
-    );
-  }
-}
-
-class Hello extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return new Center(
-      child: Text(
-        "hello",
-        style: TextStyle(
-            color: Colors.lightGreen,
-            fontSize: 30.0,
-            backgroundColor: Colors.pink,
-            letterSpacing: 5.0),
-        textDirection: TextDirection.rtl,
-      ),
-    );
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+            backgroundColor: Colors.grey[100],
+            appBar: AppBar(
+              title: Text("wew"),
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () => debugPrint("点击了搜索"),
+                )
+              ],
+              elevation: 0,
+              bottom: TabBar(
+                  unselectedLabelColor: Colors.grey,
+                  indicatorColor: Colors.black,
+                  indicatorSize: TabBarIndicatorSize.label,
+                  indicatorWeight: 1,
+                  tabs: <Widget>[
+                    Tab(
+                      icon: Icon(Icons.local_activity),
+                    ),
+                    Tab(
+                      icon: Icon(Icons.laptop_chromebook),
+                    ),
+                    Tab(
+                      icon: Icon(Icons.label_important),
+                    )
+                  ]),
+            ),
+            body: TabBarView(children: <Widget>[
+              listViewDemo(),
+              Icon(
+                Icons.laptop_chromebook,
+                size: 128.0,
+                color: Colors.cyan,
+              ),
+              Icon(
+                Icons.label_important,
+                size: 128.0,
+                color: Colors.cyan,
+              )
+            ]),
+            drawer: DrawerDemo(),
+            bottomNavigationBar: BottomNavigationBarDemo()));
   }
 }
