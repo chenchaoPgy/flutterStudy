@@ -4,6 +4,7 @@ import 'model/post.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/basic_demo.dart';
+import 'demo/layout_demo.dart';
 
 void main() {
   runApp(app());
@@ -60,11 +61,7 @@ class Home extends StatelessWidget {
             body: TabBarView(children: <Widget>[
               listViewDemo(),
               BasicDemo(),
-              Icon(
-                Icons.label_important,
-                size: 128.0,
-                color: Colors.cyan,
-              )
+              LayoutDemo(),
             ]),
             drawer: DrawerDemo(),
             bottomNavigationBar: BottomNavigationBarDemo()));
