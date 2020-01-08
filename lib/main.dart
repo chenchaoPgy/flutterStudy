@@ -6,6 +6,7 @@ import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
+import 'demo/sliver_demo.dart';
 
 void main() {
   runApp(app());
@@ -17,7 +18,7 @@ class app extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Home(),
+        home: SliverDemo(),
         theme: ThemeData(
             highlightColor: Color.fromRGBO(255, 125, 125, 0.5),
             splashColor: Colors.white70,
