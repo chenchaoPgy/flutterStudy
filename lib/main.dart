@@ -8,6 +8,7 @@ import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
+import 'demo/form_demo.dart';
 
 void main() {
   runApp(app());
@@ -19,19 +20,19 @@ class app extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Home(),
-//        initialRoute: "/about",
-//        routes: {
-//          "/": (context) => NavigatorDemo(),
-//          '/about': (context) =>
-//              Page(
-//                title: 'About',
-//              )
-//        },
+//        home: NavigatorDemo(),
+        initialRoute: "/form",
+        routes: {
+          "/": (context) => Home(),
+          '/about': (context) => Page(
+                title: 'About',
+              ),
+          '/form': (context) => FormDemo(),
+        },
         theme: ThemeData(
-            highlightColor: Color.fromRGBO(255, 125, 125, 0.5),
-            splashColor: Colors.white70,
-            primarySwatch: Colors.yellow));
+            primaryColor: Colors.yellow,
+            highlightColor: Colors.green,
+            splashColor: Colors.white70,));
   }
 }
 
@@ -80,5 +81,26 @@ class Home extends StatelessWidget {
             ]),
             drawer: DrawerDemo(),
             bottomNavigationBar: BottomNavigationBarDemo()));
+  }
+}
+
+class Page extends StatelessWidget {
+  final String title;
+
+  Page({this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: Icon(Icons.arrow_back),
+      ),
+    );
   }
 }
