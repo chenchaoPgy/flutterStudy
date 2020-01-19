@@ -4,6 +4,9 @@ import 'package:my_flutter_app/model/post.dart';
 import 'button_demo.dart';
 import 'floating_action_button.dart';
 import 'popup_menu_button_demo.dart';
+import 'form_demo.dart';
+import 'check_box_demo.dart';
+import 'radio_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -15,6 +18,18 @@ class MaterialComponents extends StatelessWidget {
       body: Container(
         child: ListView(
           children: <Widget>[
+            ListItem(
+              title: 'RadioDemo',
+              page: RadioDemo(),
+            ),
+            ListItem(
+              title: 'CheckBoxDemo',
+              page: CheckBoxDemo(),
+            ),
+            ListItem(
+              title: 'FormDemo',
+              page: FormDemo(),
+            ),
             ListItem(
               title: 'PopupMenuButtonDemo',
               page: PopupMenuButtonDemo(),
