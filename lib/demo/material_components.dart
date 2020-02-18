@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_flutter_app/demo/datetime_demo.dart';
 import 'package:my_flutter_app/model/post.dart';
 import 'button_demo.dart';
 import 'floating_action_button.dart';
@@ -8,6 +9,7 @@ import 'form_demo.dart';
 import 'check_box_demo.dart';
 import 'radio_demo.dart';
 import 'switch_demo.dart';
+import 'slider_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -19,6 +21,14 @@ class MaterialComponents extends StatelessWidget {
       body: Container(
         child: ListView(
           children: <Widget>[
+            ListItem(
+              title: 'DatetimeDemo',
+              page: DateTimeDemo(),
+            ),
+            ListItem(
+              title: 'SliderDemo',
+              page: SliderDemo(),
+            ),
             ListItem(
               title: 'SwitchDemo',
               page: SwtichDemo(),
