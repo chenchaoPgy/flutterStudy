@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/demo/datetime_demo.dart';
+import 'package:my_flutter_app/demo/simple_dialog_demo.dart';
 import 'package:my_flutter_app/model/post.dart';
 import 'button_demo.dart';
 import 'floating_action_button.dart';
@@ -21,6 +22,10 @@ class MaterialComponents extends StatelessWidget {
       body: Container(
         child: ListView(
           children: <Widget>[
+            ListItem(
+              title: 'SimpleDialogDemo',
+              page: SimpleDialogDemo(),
+            ),
             ListItem(
               title: 'DatetimeDemo',
               page: DateTimeDemo(),
