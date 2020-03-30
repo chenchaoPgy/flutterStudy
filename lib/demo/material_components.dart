@@ -15,6 +15,7 @@ import 'check_box_demo.dart';
 import 'radio_demo.dart';
 import 'switch_demo.dart';
 import 'slider_demo.dart';
+import 'ChipDemo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -26,6 +27,10 @@ class MaterialComponents extends StatelessWidget {
       body: Container(
         child: ListView(
           children: <Widget>[
+            ListItem(
+              title: "ChipDemo",
+              page: ChipDemo(),
+            ),
             ListItem(
               title: "ExpansionPanelDemo",
               page: ExpansionPanelDemo(),
