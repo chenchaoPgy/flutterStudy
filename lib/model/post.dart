@@ -1,18 +1,20 @@
 class Post {
-
-  const Post({
+  Post({
     this.title,
     this.author,
-    this.description,
     this.imageUrl,
+    this.description,
   });
+
   final String title;
   final String author;
-  final String description;
   final String imageUrl;
+  final String description;
+
+  bool selected = false;
 }
 
-final List<Post> posts=[
+final List<Post> posts = [
   Post(
     title: 'Candy Shop',
     author: 'Mohamed Chahin',

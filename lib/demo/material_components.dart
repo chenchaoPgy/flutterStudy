@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/demo/alert_dialog_demo.dart';
 import 'package:my_flutter_app/demo/bottom_sheet_dart.dart';
+import 'package:my_flutter_app/demo/data_table_demo.dart';
 import 'package:my_flutter_app/demo/datetime_demo.dart';
 import 'package:my_flutter_app/demo/expansion_panel_demo.dart';
 import 'package:my_flutter_app/demo/simple_dialog_demo.dart';
@@ -27,6 +28,10 @@ class MaterialComponents extends StatelessWidget {
       body: Container(
         child: ListView(
           children: <Widget>[
+            ListItem(
+              title: "DataTableDemo",
+              page: DataTableDemo(),
+            ),
             ListItem(
               title: "ChipDemo",
               page: ChipDemo(),
