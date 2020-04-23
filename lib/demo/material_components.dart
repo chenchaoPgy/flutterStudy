@@ -10,6 +10,7 @@ import 'package:my_flutter_app/demo/paginated_data_table_demo.dart';
 import 'package:my_flutter_app/demo/simple_dialog_demo.dart';
 import 'package:my_flutter_app/demo/snack_bar_demo.dart';
 import 'package:my_flutter_app/demo/step_demo.dart';
+import 'package:my_flutter_app/demo/stream/stream_demo.dart';
 import 'package:my_flutter_app/model/post.dart';
 import 'button_demo.dart';
 import 'floating_action_button.dart';
@@ -31,6 +32,10 @@ class MaterialComponents extends StatelessWidget {
       body: Container(
         child: ListView(
           children: <Widget>[
+            ListItem(
+              title: "StreamDemo",
+              page: StreamDemo(),
+            ),
             ListItem(
               title: "StepDemo",
               page: StepDemo(),
