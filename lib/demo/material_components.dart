@@ -9,6 +9,7 @@ import 'package:my_flutter_app/demo/data_table_demo.dart';
 import 'package:my_flutter_app/demo/datetime_demo.dart';
 import 'package:my_flutter_app/demo/expansion_panel_demo.dart';
 import 'package:my_flutter_app/demo/http/http_demo.dart';
+import 'package:my_flutter_app/demo/i18n/i18n_demo.dart';
 import 'package:my_flutter_app/demo/paginated_data_table_demo.dart';
 import 'package:my_flutter_app/demo/rxdart/rxdart_demo.dart';
 import 'package:my_flutter_app/demo/simple_dialog_demo.dart';
@@ -36,6 +37,10 @@ class MaterialComponents extends StatelessWidget {
       body: Container(
         child: ListView(
           children: <Widget>[
+            ListItem(
+              title: "I18nDemo",
+              page: I18nDemo(),
+            ),
             ListItem(
               title: "AnimationDemo",
               page: AnimationDemo(),
