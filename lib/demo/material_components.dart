@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/demo/alert_dialog_demo.dart';
+import 'package:my_flutter_app/demo/bloc/bloc_demo.dart';
 import 'package:my_flutter_app/demo/bottom_sheet_dart.dart';
 import 'package:my_flutter_app/demo/card_demo.dart';
 import 'package:my_flutter_app/demo/data_table_demo.dart';
 import 'package:my_flutter_app/demo/datetime_demo.dart';
 import 'package:my_flutter_app/demo/expansion_panel_demo.dart';
+import 'package:my_flutter_app/demo/http/http_demo.dart';
 import 'package:my_flutter_app/demo/paginated_data_table_demo.dart';
+import 'package:my_flutter_app/demo/rxdart/rxdart_demo.dart';
 import 'package:my_flutter_app/demo/simple_dialog_demo.dart';
 import 'package:my_flutter_app/demo/snack_bar_demo.dart';
 import 'package:my_flutter_app/demo/step_demo.dart';
@@ -32,6 +35,18 @@ class MaterialComponents extends StatelessWidget {
       body: Container(
         child: ListView(
           children: <Widget>[
+            ListItem(
+              title: "HttpDemo",
+              page: HttpDemo(),
+            ),
+            ListItem(
+              title: "BlocDemo",
+              page: BlocDemo(),
+            ),
+            ListItem(
+              title: "RxDemo",
+              page: RxDemo(),
+            ),
             ListItem(
               title: "StreamDemo",
               page: StreamDemo(),
