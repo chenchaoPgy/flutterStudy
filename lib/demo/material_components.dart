@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/demo/alert_dialog_demo.dart';
+import 'package:my_flutter_app/demo/animation/animation_demo.dart';
 import 'package:my_flutter_app/demo/bloc/bloc_demo.dart';
 import 'package:my_flutter_app/demo/bottom_sheet_dart.dart';
 import 'package:my_flutter_app/demo/card_demo.dart';
@@ -35,6 +36,10 @@ class MaterialComponents extends StatelessWidget {
       body: Container(
         child: ListView(
           children: <Widget>[
+            ListItem(
+              title: "AnimationDemo",
+              page: AnimationDemo(),
+            ),
             ListItem(
               title: "HttpDemo",
               page: HttpDemo(),
